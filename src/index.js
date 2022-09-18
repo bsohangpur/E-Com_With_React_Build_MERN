@@ -54,6 +54,11 @@ app.use('/register', Register);
 const Login = require('./routes/Login');
 app.use('/login', Login);
 
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../clients/index.html'))
+})
+
+
 app.listen(port, console.log("live"))
 
 
